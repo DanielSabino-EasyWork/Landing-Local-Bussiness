@@ -39,10 +39,10 @@
       </a>
       <nav aria-label="Primary" class="hidden sm:block">
         <ul class="flex gap-4 text-text-muted">
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#menu">Menu</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#about">About</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#location">Location</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#contact">Contact</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#menu">Menu</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#about">About</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#location">Location</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#contact">Contact</a></li>
         </ul>
       </nav>
       <button id="menuBtn" class="sm:hidden border border-white/30 text-text px-3 py-2 rounded-lg">Menu</button>
@@ -50,16 +50,66 @@
     <div id="mobileMenu" class="hidden sm:hidden max-w-[1200px] mx-auto px-4 pb-3" role="dialog" aria-modal="true" aria-label="Mobile menu">
       <nav>
         <ul class="grid gap-2 text-text-muted">
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#menu">Menu</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#about">About</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#location">Location</a></li>
-          <li><a class="px-3 py-2 rounded-lg hover:bg-white/10 hover:text-text" href="#contact">Contact</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#menu">Menu</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#about">About</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#location">Location</a></li>
+          <li><a class="px-3 py-2 rounded-lg transition hover:-translate-y-0.5 hover:bg-white/10 hover:text-text" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="home" class="scroll-mt-24">
+    <!-- Top Promo Slider (customer experience & offers) -->
+    <section class="pt-6" aria-labelledby="promo-title">
+      <h2 id="promo-title" class="sr-only">Promotions & atmosphere</h2>
+      <div class="max-w-[1200px] mx-auto px-4">
+        <div class="relative overflow-hidden rounded-2xl border border-amber-200/20 shadow-soft aspect-[16/9] sm:aspect-[16/7] md:aspect-[16/6]" id="topSlider" aria-roledescription="carousel" aria-label="Promotions" tabindex="0">
+          <div id="topSlides" class="flex w-full h-full transition-transform duration-500 ease-out">
+            <!-- Slide 1: Experience -->
+            <div class="min-w-full relative slide" role="group" aria-label="1 of 3">
+              <img loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900" alt="Friends enjoying dinner and toasting at the restaurant"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 max-w-[70%]">
+                <span class="inline-block text-xs px-2 py-1 rounded-full bg-white/15 border border-white/30">Customer experience</span>
+                <h3 class="mt-2 text-2xl font-serif font-semibold">Lively nights, cozy mornings</h3>
+                <p class="text-text-muted max-w-[55ch]">From brunch to late dinner, enjoy fresh plates and warm service.</p>
+              </div>
+            </div>
+            <!-- Slide 2: Offer -->
+            <div class="min-w-full relative slide" role="group" aria-label="2 of 3">
+              <img loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/3758131/pexels-photo-3758131.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900" alt="Mimosas and brunch dishes on a sunny table"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 max-w-[70%]">
+                <span class="inline-block text-xs px-2 py-1 rounded-full bg-white/15 border border-white/30">Weekly offer</span>
+                <h3 class="mt-2 text-2xl font-serif font-semibold">Sunday Brunch · 2×1 Mimosas</h3>
+                <p class="text-text-muted">Every Sunday 10:00–13:00 · Reserve your table in advance.</p>
+              </div>
+            </div>
+            <!-- Slide 3: Ambience -->
+            <div class="min-w-full relative slide" role="group" aria-label="3 of 3">
+              <img loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900" alt="Warm interior ambience with lights and wooden tables"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              <div class="absolute bottom-5 left-5 sm:bottom-6 sm:left-6 max-w-[70%]">
+                <span class="inline-block text-xs px-2 py-1 rounded-full bg-white/15 border border-white/30">Ambience</span>
+                <h3 class="mt-2 text-2xl font-serif font-semibold">Warm, modern, and welcoming</h3>
+                <p class="text-text-muted">Perfect for family gatherings and date nights.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Controls -->
+          <button id="topPrev" class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full p-2 bg-black/40 hover:bg-black/60 backdrop-blur text-white transition" aria-label="Previous slide">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button id="topNext" class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-2 bg-black/40 hover:bg-black/60 backdrop-blur text-white transition" aria-label="Next slide">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+          <!-- Dots -->
+          <div id="topDots" class="absolute bottom-2 left-0 right-0 flex justify-center gap-2"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Hero -->
     <section class="py-16 sm:py-24">
       <div class="max-w-[1200px] mx-auto px-4 grid md:grid-cols-[1.1fr_.9fr] gap-10 items-center">
@@ -115,43 +165,43 @@
         <p class="text-text-muted">Browse categories or see everything.</p>
         <!-- Tabs -->
         <div class="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Menu categories">
-          <button data-tab="all" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text hover:bg-white/10 aria-selected:bg-white/10" aria-selected="true">All</button>
-          <button data-tab="starters" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text hover:bg-white/10">Starters</button>
-          <button data-tab="mains" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text hover:bg-white/10">Mains</button>
-          <button data-tab="desserts" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text hover:bg-white/10">Desserts</button>
-          <button data-tab="drinks" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text hover:bg-white/10">Drinks</button>
+          <button data-tab="all" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text transition hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:bg-white/10 aria-selected:bg-white/10" aria-selected="true">All</button>
+          <button data-tab="starters" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text transition hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:bg-white/10">Starters</button>
+          <button data-tab="mains" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text transition hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:bg-white/10">Mains</button>
+          <button data-tab="desserts" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text transition hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:bg-white/10">Desserts</button>
+          <button data-tab="drinks" class="tab-btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/30 text-text transition hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:bg-white/10">Drinks</button>
         </div>
         <!-- Items -->
         <div id="menuGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
           <!-- Card template: repeat with data-cat -->
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="starters">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="starters">
             <div class="flex items-start justify-between gap-3">
               <h3 class="font-semibold">Roasted Tomato Soup</h3>
               <span class="text-amber-200 font-semibold">$8</span>
             </div>
             <p class="text-text-muted text-sm">Basil oil, sourdough croutons</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="starters">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="starters">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Crispy Cauliflower</h3><span class="text-amber-200 font-semibold">$9</span></div>
             <p class="text-text-muted text-sm">Chili‑lime glaze, sesame</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="mains">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="mains">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Grilled Salmon</h3><span class="text-amber-200 font-semibold">$18</span></div>
             <p class="text-text-muted text-sm">Herb quinoa, lemon butter</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="mains">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="mains">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Luna Burger</h3><span class="text-amber-200 font-semibold">$14</span></div>
             <p class="text-text-muted text-sm">Aged cheddar, pickled onions, brioche</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="desserts">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="desserts">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Chocolate Mousse</h3><span class="text-amber-200 font-semibold">$7</span></div>
             <p class="text-text-muted text-sm">Sea salt, whipped cream</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="drinks">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="drinks">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Cold Brew</h3><span class="text-amber-200 font-semibold">$4</span></div>
             <p class="text-text-muted text-sm">House blend, slow‑steeped</p>
           </article>
-          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4" data-cat="drinks">
+          <article class="rounded-xl2 border border-amber-200/20 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:ring-1 hover:ring-amber-300/40 hover:shadow-lg" data-cat="drinks">
             <div class="flex items-start justify-between gap-3"><h3 class="font-semibold">Lemonade</h3><span class="text-amber-200 font-semibold">$3</span></div>
             <p class="text-text-muted text-sm">Meyer lemon, mint</p>
           </article>

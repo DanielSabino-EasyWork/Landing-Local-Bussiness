@@ -21,6 +21,52 @@
       mobileMenu.classList.toggle('hidden', open);
       menuBtn.setAttribute('aria-expanded', String(!open));
     });
+    // Top Promo Slider logic (autoplay, controls, dots, pause on hover)
+    (function(){
+      const slider = document.getElementById('topSlider');
+      const track  = document.getElementById('topSlides');
+      const prev   = document.getElementById('topPrev');
+      const next   = document.getElementById('topNext');
+      const dotsEl = document.getElementById('topDots');
+      if(!slider || !track) return;
+      const slides = Array.from(track.children);
+      let i = 0, timer = null;
+
+      function renderDots(){
+        dotsEl.innerHTML='';
+        slides.forEach((_, idx)=>{
+          const b = document.createElement('button');
+          b.className = 'w-2.5 h-2.5 rounded-full bg-white/40 transition';
+          b.setAttribute('aria-label', `Go to slide ${idx+1}`);
+          b.addEventListener('click', ()=>{ go(idx); });
+          dotsEl.appendChild(b);
+        });
+      }
+      function setActive(){
+        track.style.transform = `translateX(-${i*100}%)`;
+        Array.from(dotsEl.children).forEach((d, idx)=>{
+          d.classList.toggle('bg-amber-300', idx===i);
+          d.classList.toggle('bg-white/40', idx!==i);
+        });
+      }
+      function go(n){ i = (n+slides.length)%slides.length; setActive(); }
+      function play(){ timer = setInterval(()=> go(i+1), 4500); }
+      function pause(){ clearInterval(timer); timer=null; }
+
+      renderDots();
+      setActive();
+      play();
+
+      prev?.addEventListener('click', ()=> go(i-1));
+      next?.addEventListener('click', ()=> go(i+1));
+
+      slider.addEventListener('mouseenter', pause);
+      slider.addEventListener('mouseleave', play);
+      slider.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowLeft') { e.preventDefault(); go(i-1); }
+        if(e.key==='ArrowRight'){ e.preventDefault(); go(i+1); }
+      });
+    })();
 
     // Tabs filter (Menu)
     const tabButtons = $$('.tab-btn');
