@@ -1,0 +1,67 @@
+/* =========================
+       THEME TOKENS (CSS VARS)
+       ========================= */
+    :root {
+      /* Healthy (default) */
+      --bg: 18 16 13;        /* fondo base */
+      --bg-elev: 23 19 16;   /* paneles */
+      --text: 245 239 230;   /* texto principal */
+      --muted: 205 190 176;  /* texto secundario */
+      --brand: 16 185 129;   /* acento principal */
+      --ring: 74 222 128;    /* ring/outline */
+      --cta-from: 34 197 94; /* gradiente CTA start */
+      --cta-to: 163 230 53;  /* gradiente CTA end */
+      --cta-contrast: 10 10 10; /* color texto CTA */
+    }
+    body[data-theme="fast"]{
+      --bg: 24 12 12; --bg-elev: 32 14 14; --text: 255 247 237; --muted: 252 211 77;
+      --brand: 239 68 68; --ring: 251 146 60; --cta-from: 251 191 36; --cta-to: 239 68 68; --cta-contrast: 0 0 0;
+    }
+    body[data-theme="healthy"]{
+      --bg: 18 16 13; --bg-elev: 23 19 16; --text: 245 239 230; --muted: 205 190 176;
+      --brand: 16 185 129; --ring: 74 222 128; --cta-from: 34 197 94; --cta-to: 163 230 53; --cta-contrast: 10 10 10;
+    }
+    body[data-theme="luxury"]{
+      --bg: 10 10 10; --bg-elev: 18 18 18; --text: 245 240 225; --muted: 209 198 178;
+      --brand: 245 158 11; --ring: 251 191 36; --cta-from: 168 85 247; --cta-to: 245 158 11; --cta-contrast: 255 255 255;
+    }
+    body[data-theme="seafood"]{
+      --bg: 9 20 30; --bg-elev: 14 28 42; --text: 232 246 255; --muted: 171 199 214;
+      --brand: 14 165 233; --ring: 56 189 248; --cta-from: 14 165 233; --cta-to: 20 184 166; --cta-contrast: 12 20 28;
+    }
+
+    /* Base tokens applied */
+    body { background: rgb(var(--bg)); color: rgb(var(--text)); }
+    /* Base site theme (distinct from cuisine themes) */
+    body[data-theme="base"]{
+      --bg: 18 16 13;        /* warm dark */
+      --bg-elev: 26 22 18;   /* elevated panels */
+      --text: 245 239 230;   /* main text */
+      --muted: 205 190 176;  /* secondary text */
+      --brand: 245 158 11;   /* amber-500 */
+      --ring: 251 191 36;    /* amber-400 */
+      --cta-from: 245 158 11;/* amber-500 */
+      --cta-to: 217 119 6;   /* amber-600 */
+      --cta-contrast: 10 10 10; /* dark text on bright cta */
+    }
+    .text-muted { color: rgb(var(--muted)); }
+    .panel { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); }
+    .elev { background: rgb(var(--bg-elev)); border: 1px solid rgba(255,255,255,0.15); }
+
+    /* Buttons that always keep contrast */
+    .btn-primary { background: linear-gradient(to right, rgb(var(--cta-from)), rgb(var(--cta-to))); color: rgb(var(--cta-contrast)); }
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-outline { border: 1px solid rgba(var(--ring), .55); color: rgb(var(--brand)); background: transparent; }
+    .btn-outline:hover { background: rgba(255,255,255,.08); }
+    .ring-brand:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(var(--ring),.6); }
+
+    /* Underline hover for navbar links */
+    .link-nav { position: relative; }
+    .link-nav::after { content:""; position:absolute; left:12px; right:12px; bottom:6px; height:2px; background: linear-gradient(90deg, rgb(var(--cta-from)), rgb(var(--cta-to))); transform: scaleX(0); transform-origin:left; transition: transform .25s ease; }
+    .link-nav:hover::after, .link-nav:focus-visible::after { transform: scaleX(1); }
+
+    /* Backdrop based on brand hint */
+    .backdrop-grad{ background:
+      radial-gradient(900px 420px at 80% -10%, rgba(var(--cta-from),.12), transparent 55%),
+      radial-gradient(800px 480px at 0% 10%, rgba(var(--cta-to),.10), transparent 55%);
+    }
